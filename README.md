@@ -76,11 +76,11 @@ Pueden ser:
 ## Search Agents
 Representamos al modelo con un multigrafos, de forma que dado un estado y una accion con un costo, nos lleva a un siguiente estado
 ```mermaid
-graph TD
-	s_0 --> s_1: S, 1
-	s_0 --> s_0: W, 1
-	s_0 --> s_0:E, 1
-	s_0 --> s_0: N, 1
+graph TD;
+	s_0 --> s_1: S, 1;
+	s_0 --> s_0: W, 1;
+	s_0 --> s_0:E, 1;
+	s_0 --> s_0: N, 1;
 ```
 Funciona en ambientes deterministicos y estocasticos
 
@@ -101,10 +101,10 @@ Que pasa cuando no conozco el grafo?
 ## Ambientes estocasticos
 Para modelar ambientes estocasticos, usamos el modelo MDP (Markov Decision Process). Lo podemos ver como un grafo que en las aristas tiene la accion, la recompensa y la probabilidad de que la accion nos lleve por ese camino
 ```mermaid
-graph TD
-	in --> in: stay, $4, 2/3
-	in --> end: stay, $4, 1/3
-	in --> end: quit, $10, 1
+graph TD;
+	in --> in: stay, $4, 2/3;
+	in --> end: stay, $4, 1/3;
+	in --> end: quit, $10, 1;
 ```
 
 
