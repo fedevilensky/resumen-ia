@@ -103,8 +103,8 @@ Para modelar ambientes estocasticos, usamos el modelo MDP (Markov Decision Proce
 ```mermaid
 graph TD;
 	in --> |stay, $4, 2/3| in;
-	in --> |stay, $4, 1/3| end;
-	in --> |quit, $10, 1| end;
+	in --> |stay, $4, 1/3| node[end];
+	in --> |quit, $10, 1| node[end];
 ```
 
 
