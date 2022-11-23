@@ -254,7 +254,7 @@ $V^{(k+1)}=\frac{kV^{(k)}+G^{(k+1)}}{k+1}$
 
 $V^{(k+1)}=\frac{kV^{(k)}}{k+1}+\frac{G^{(k+1)}}{k+1}+\frac{V^{(k)}}{k+1}-\frac{V^{(k)}}{k+1}$
 
-$V^{(k+1)}=V^{(k)}+\frac{1}{k+1}(G^{(k+1)-V^{(k)}})$
+$V^{(k+1)}=V^{(k)}+\frac{1}{k+1}(G^{(k+1)}-V^{(k)})$
 
 Y cambiamos el $\frac{1}{k+1}$ por un valor $\alpha \in (0,1)$, el cual llamamos tasa de actualización. Entonces ahora podemos actualizar la estimacion del valor de V, sin depender de la cantidad de episodios que vimos, y podemos ver al $\alpha$ como "que tan rapido quiero aprender el valor de V", o como "que tanto quiero que varíe el valor de V".
 
@@ -286,7 +286,7 @@ Repetir:
       explore: a ← sample(A(s))
       exploit: a ← arg m ́ax Q(s, ·)
     s′, r , done ← step(a)
-    Q(s, a) ← Q(s, a) + α(r + γ m ́ax Q(s′, ·) − Q(s, a))
+    Q(s, a) ← Q(s, a) + α(r + γ max Q(s′, ·) − Q(s, a))
     s ← s′
 ```
 
