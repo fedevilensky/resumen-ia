@@ -237,7 +237,7 @@ Repetir:
   G ← 0
   Para cada paso del episodio, t = T − 1, T − 2, ... , 0:
     G ← γ G + Rt+1
-    Si st ̸ ∈ {s0, ... , st−1}: 
+    Si st not in {s0, ... , st−1}: // si st es el primero del episodio
       Agregar G a Utilidades(st )
       V (st ) ← promedio(Utilidades(st ))
 ```
