@@ -1,35 +1,29 @@
-- [Parcial 1](#parcial-1)
-  - [Qué es un agente racional?](#qué-es-un-agente-racional)
-  - [PEAS](#peas)
-    - [Ejemplo](#ejemplo)
-  - [Ambientes](#ambientes)
-    - [Observabilidad](#observabilidad)
-    - [Proximo estado](#proximo-estado)
-    - [Segun el tamano de los episodios](#segun-el-tamano-de-los-episodios)
-    - [Paso del tiempo](#paso-del-tiempo)
-    - [Espacio de acciones y espacio de percepciones](#espacio-de-acciones-y-espacio-de-percepciones)
-    - [Cantidad de agentes](#cantidad-de-agentes)
-    - [Segun las leyes del ambiente](#segun-las-leyes-del-ambiente)
-    - [Ejemplos](#ejemplos)
-  - [Tipos de Agentes](#tipos-de-agentes)
-  - [Search Agents](#search-agents)
-    - [Busquedas de caminos + Cortos](#busquedas-de-caminos--cortos)
-  - [Ambientes estocasticos](#ambientes-estocasticos)
-    - [Agente racional](#agente-racional)
-- [Parcial 2](#parcial-2)
-  - [MDPs](#mdps)
-    - [Value iteration](#value-iteration)
-    - [Monte Carlo](#monte-carlo)
-    - [Estimacion Monte Carlo para MDPs](#estimacion-monte-carlo-para-mdps)
-    - [Estimacion de valor de Policy con metodo MonteCarlo](#estimacion-de-valor-de-policy-con-metodo-montecarlo)
-  - [Q Learning (off-policy, o sea, que no depende de una policy)](#q-learning-off-policy-o-sea-que-no-depende-de-una-policy)
-  - [Juegos Alternados (de suma cero)](#juegos-alternados-de-suma-cero)
-    - [Propiedades de minimax](#propiedades-de-minimax)
-  - [Limitantes](#limitantes)
+# Resumen para parciales
 
-# Parcial 1
+- [Resumen para parciales](#resumen-para-parciales)
+  - [Parcial 1](#parcial-1)
+    - [Qué es un agente racional?](#qué-es-un-agente-racional)
+    - [PEAS](#peas)
+      - [Ejemplo](#ejemplo)
+    - [Ambientes](#ambientes)
+      - [Observabilidad](#observabilidad)
+      - [Proximo estado](#proximo-estado)
+      - [Segun el tamano de los episodios](#segun-el-tamano-de-los-episodios)
+      - [Paso del tiempo](#paso-del-tiempo)
+      - [Espacio de acciones y espacio de percepciones](#espacio-de-acciones-y-espacio-de-percepciones)
+      - [Cantidad de agentes](#cantidad-de-agentes)
+      - [Segun las leyes del ambiente](#segun-las-leyes-del-ambiente)
+      - [Ejemplos](#ejemplos)
+    - [Tipos de Agentes](#tipos-de-agentes)
+    - [Search Agents](#search-agents)
+      - [Busquedas de caminos + Cortos](#busquedas-de-caminos--cortos)
+    - [Ambientes estocasticos](#ambientes-estocasticos)
+      - [Agente racional](#agente-racional)
+        - [Algoritmos de aprendizaje de policies para MDP](#algoritmos-de-aprendizaje-de-policies-para-mdp)
 
-## Qué es un agente racional?
+## Parcial 1
+
+### Qué es un agente racional?
 
 - Agente
   - percibe el ambiente mediante sensores
@@ -38,14 +32,14 @@
   - se espera que elija la "mejor" opcion
     - busca maximizar la performance en base a las observaciones y lo sabido
 
-## PEAS
+### PEAS
 
 - Performance (metrica que nos dice que tan bien viene)
 - Environment
 - Actuators
 - Sensors
 
-### Ejemplo
+#### Ejemplo
 
 1) Poker (Hold' em)
 
@@ -61,30 +55,30 @@
    - A: mover los flaps, manejar el consumo de combustible
    - S: Sensor de altitud, de velocidad, de temperatura, indicador de combustible, etc.
 
-## Ambientes
+### Ambientes
 
-### Observabilidad
+#### Observabilidad
 
 Puede ser:
 
 - Completa: Podemos conocer el ambiente en su totalidad
 - Parcial: Podemos conocer solo una parte del ambiente
 
-### Proximo estado
+#### Proximo estado
 
 Puede ser:
 
 - Determinista: Dado un estado, si efectuamos una accion, el resultado es siempre el mismo
 - Estocastico: Dado un estado, si efectuamos una accion, el resultado puede cambiar
 
-### Segun el tamano de los episodios
+#### Segun el tamano de los episodios
 
 Puede ser:
 
 - Secuencial: Tenemos una secuencia de estado->accion->estado... para terminar el episodio
 - Episodico: Tenemos un unico estado en el episodio
 
-### Paso del tiempo
+#### Paso del tiempo
 
 Puede ser:
 
@@ -92,28 +86,28 @@ Puede ser:
 - Dinamico: Cambia con el paso del tiempo
 Por paso del tiempo podemos tomar ejecutar una accion
 
-### Espacio de acciones y espacio de percepciones
+#### Espacio de acciones y espacio de percepciones
 
 Puede ser:
 
 - Discreto: los cambios/acciones son discretos
 - Continuo: los cambios son infinitesimales, el espacio de las acciones es continuo
 
-### Cantidad de agentes
+#### Cantidad de agentes
 
 Puede ser:
 
 - Monoagente
 - Multiagente
 
-### Segun las leyes del ambiente
+#### Segun las leyes del ambiente
 
 Pueden ser:
 
 - Conocidas
 - Desconocidas
 
-### Ejemplos
+#### Ejemplos
 
 | Ejemplo | Observavilidad | Determinista | Secuencial | Tiempo | Espacio | Cant Agentes | Leyes    |
 |---------|----------------|--------------|------------|--------|---------|--------------|---------|
@@ -124,7 +118,7 @@ Pueden ser:
 | Cubo de Rubik | Total | Determinista | Secuencial | Estatico | Discreto | Monoagente | Conocidas |
 | Diagnostico Medico | Parcial | Estocastico | Episodico | Estatico | Continuo | Monoagente | Desconocidas|
 
-## Tipos de Agentes
+### Tipos de Agentes
 
 - Aleatorio
 - Simple Reflex (si a => b)
@@ -132,7 +126,7 @@ Pueden ser:
 - Search Agent
 - Learning Agents (por ejemplo un agente que hace policy iteration)
 
-## Search Agents
+### Search Agents
 
 Representamos al modelo con un multigrafos, de forma que dado un estado y una accion con un costo, nos lleva a un siguiente estado
 
@@ -146,7 +140,7 @@ graph TD;
 
 Funciona en ambientes deterministicos y estocasticos
 
-### Busquedas de caminos + Cortos
+#### Busquedas de caminos + Cortos
 
 - BFS
 Camino mas corto en grafos no ponderados
@@ -161,7 +155,7 @@ Que pasa cuando no conozco el grafo?
   - Greedy local search, no da buenos resultados
   - LRTA*, trata de ir en la direccion correcta, pero sin conocer el grafo
 
-## Ambientes estocasticos
+### Ambientes estocasticos
 
 Para modelar ambientes estocasticos, usamos el modelo MDP (Markov Decision Process). Lo podemos ver como un grafo que en las aristas tiene la accion, la recompensa y la probabilidad de que la accion nos lleve por ese camino
 
@@ -172,24 +166,31 @@ graph TD;
  in --> |quit, $10, 1| node[end];
 ```
 
-### Agente racional
+#### Agente racional
 
-En un MDP, el agente busca maximizar la utilidad U
+En un MDP, el agente busca maximizar la utilidad $U$
 
-- Utilidad = suma de todas las recompenzas del episodio
+- $U$ = suma de todas las recompenzas del episodio
 Como comparamos agentes?
 
-Buscamos el valor de una policy en un estado (en el estado inicial por ejemplo) `V_pol(s)`
+Buscamos el valor de una policy en un estado (en el estado inicial por ejemplo) $V_{\pi}(s)$
+
+Para calcular $V_{\pi}(s)$ manejamos 2 opciones:
+
+1. Resolver la recursion de forma analitica
+2. Resolverlo con metodos numericos (tabulación)
 
 Sabiendo comparar policies, como podemos mejorarla?
 
-`Policy Improvement`, y si repetimos esto muchas veces, estamos haciendo `Policy Iteration`
+##### Algoritmos de aprendizaje de policies para MDP
 
-# Parcial 2
+1. Policy Improvement: Toma una policy y nos devuelve una mejor o igual
+2. Policy Iteration: Repetimos policy improvement
+3. Value Iteration: Partiendo de las ecuaciones de Bellman, y el concepto de policy óptima $\pi^*$. El algoritmo busca $\pi^*$
 
-## MDPs
+<!-- ## Parcial 2
 
-### Value iteration
+#### Value iteration
 
 Siguiendo con los conceptos del parcial anterios, ahora buscamos calcular el valor de un estado, independiente de la policy. 
 
@@ -211,13 +212,13 @@ $V^{t+1}(s,a)=max_{a\in A(s)}Q^{t+1}(s,a)$
 
 $\pi^{t+1}(s)=argmax_{a\in A(s)}Q^{t+1}(s,a)$
 
-### Monte Carlo
+#### Monte Carlo
 
 Monte Carlo es una familia de metodos numericos para obtener soluciones a problemas a traves de pruebas aleatorias repetidas.
 
 A nivel general, es el concepto de ajusto la respuesta, introduzco aleatoriedad, ajusto, aleatorio, y asi hasta que nos cansamos.
 
-### Estimacion Monte Carlo para MDPs
+#### Estimacion Monte Carlo para MDPs
 
 Consiste en generar episodios aleatorios contra el MDP que queremos conocer, y luego calcular los valores de `P` y `R`
 
@@ -226,7 +227,7 @@ Dado un conjunto de episodios `E`
 - $P(s'|s,a)=\frac{ocurrencias\ de\ (s,a, · ,s')\ en\ E}{ocurrencias\ de\ (s,a)\ en\ E}$
 - $R(s,a,s')=\frac{suma\ de\ las\ recompensas\ de\ (s,a,r,s')\ en\ E}{ocurrencias\ de\ (s,a,·,s')\ en\ E}$
 
-### Estimacion de valor de Policy con metodo MonteCarlo
+#### Estimacion de valor de Policy con metodo MonteCarlo
 A su vez podemos directo calcular el valor de una policy para un MDP desconocido
 
 ```
@@ -272,7 +273,7 @@ Repetir:
     s ← s′
 ```
 
-## Q Learning (off-policy, o sea, que no depende de una policy)
+### Q Learning (off-policy, o sea, que no depende de una policy)
 
 Con todo esto, podemos ademas correrlo sin conocer la policy, o sea, mezclando diferencias temporales con value iteration. Para ir calculando la policy de forma online.
 
@@ -292,7 +293,7 @@ Repetir:
 
 La estrategia $\epsilon$-greedy la hacemos para evitar los optimos locales, con un $\epsilon\in[0,1]$
 
-## Juegos Alternados (de suma cero)
+### Juegos Alternados (de suma cero)
 
 No siempre tenemos un agente interactuando en un ambiente, hay veces que tenemos algun juego por turnos entre varios jugadores. Como puede ser el ta-te-ti, las damas, el ajedrez, etc.
 
@@ -312,13 +313,13 @@ Para calcular la utilidad de minimax, es casi igual, pero ahora en vez de "expec
 - Si estamos en un paso "max", la utilidad del estado es la maxima utilidad de los estados siguientes
 - Si estamos en un paso "mini", la utilidad del estado es la minima utilidad de los estados siguientes
 
-### Propiedades de minimax
+#### Propiedades de minimax
 
 $\pi_{minimax}$ es la estrategia optima frente a un rival que juega con $\pi_{min}$
 
 El valor de $\pi_{minimax}$ es una cota inferior ante cualquier $\pi$ que utilice el rival
 
-## Limitantes
+### Limitantes
 
 Son operaciones costosisimas, en general crecen de forma exponencial, sino peor, tanto en tiempo como en espacio
 
@@ -328,4 +329,4 @@ Haciendo una poda. Limitamos la profundidas, y cuando llegamos al limite, utiliz
 
 ¿Es la unica opcion?
 
-En caso de que estemos utilizando minimax, podemos ademas usar $\alpha\beta$-pruning para lograr una mayor profundidad, sin tener que calcular caminos que no sirven (Lectura opcinal del libro)
+En caso de que estemos utilizando minimax, podemos ademas usar $\alpha\beta$-pruning para lograr una mayor profundidad, sin tener que calcular caminos que no sirven (Lectura opcinal del libro) -->
