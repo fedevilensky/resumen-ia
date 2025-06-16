@@ -188,7 +188,7 @@ Sabiendo comparar policies, como podemos mejorarla?
 2. Policy Iteration: Repetimos policy improvement
 3. Value Iteration: Partiendo de las ecuaciones de Bellman, y el concepto de policy óptima $\pi^*$. El algoritmo busca $\pi^*$
 
-<!-- ## Parcial 2
+## Parcial 2
 
 #### Value iteration
 
@@ -329,4 +329,4 @@ Haciendo una poda. Limitamos la profundidas, y cuando llegamos al limite, utiliz
 
 ¿Es la unica opcion?
 
-En caso de que estemos utilizando minimax, podemos ademas usar $\alpha\beta$-pruning para lograr una mayor profundidad, sin tener que calcular caminos que no sirven (Lectura opcinal del libro) -->
+En caso de que estemos utilizando minimax, podemos ademas usar $\alpha\beta$-pruning para lograr una mayor profundidad, sin tener que calcular caminos que no sirven (Lectura opcinal del libro)
