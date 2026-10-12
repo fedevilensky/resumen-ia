@@ -188,8 +188,6 @@ Sabiendo comparar policies, como podemos mejorarla?
 2. Policy Iteration: Repetimos policy improvement
 3. Value Iteration: Partiendo de las ecuaciones de Bellman, y el concepto de policy óptima $\pi^*$. El algoritmo busca $\pi^*$
 
-## Parcial 2
-
 #### Value iteration
 
 Siguiendo con los conceptos del parcial anterios, ahora buscamos calcular el valor de un estado, independiente de la policy. 
@@ -211,6 +209,8 @@ $Q^{t+1}(s,a)=\sum_{s'}P(s'|a,s)(R(s,a,s')+\gamma V^t(s'))$
 $V^{t+1}(s,a)=max_{a\in A(s)}Q^{t+1}(s,a)$
 
 $\pi^{t+1}(s)=argmax_{a\in A(s)}Q^{t+1}(s,a)$
+
+## Parcial 2
 
 #### Monte Carlo
 
