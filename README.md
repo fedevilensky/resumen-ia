@@ -171,7 +171,8 @@ graph TD;
 En un MDP, el agente busca maximizar la utilidad $U$
 
 - $U$ = suma de todas las recompenzas del episodio
-Como comparamos agentes?
+
+#### Como comparamos agentes?
 
 Buscamos el valor de una policy en un estado (en el estado inicial por ejemplo) $V_{\pi}(s)$
 
