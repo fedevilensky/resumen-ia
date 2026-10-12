@@ -187,7 +187,7 @@ Sabiendo comparar policies, como podemos mejorarla?
 
 1. Policy Improvement: Toma una policy y nos devuelve una mejor o igual
 2. Policy Iteration: Repetimos policy improvement
-3. Value Iteration: Partiendo de las ecuaciones de Bellman, y el concepto de policy óptima $\pi^*$. El algoritmo busca $\pi^*$
+3. Value Iteration: Partiendo de las ecuaciones de Bellman, y el concepto de policy óptima $\pi^\*$. El algoritmo busca $\pi^\*$
 
 #### Value iteration
 
